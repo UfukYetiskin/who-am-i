@@ -1,3 +1,3 @@
 # who-am-i
 
-[Live](https://who-am-i-flax.vercel.app)
+[Live](https://who-am-i-git-main-uyetiskin.vercel.app)
