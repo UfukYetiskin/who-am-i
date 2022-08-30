@@ -1,21 +1,40 @@
 import React from 'react'
 import {BrowserRouter as Router, Routes,Route, Link, NavLink} from 'react-router-dom'
-
-
+import styled from 'styled-components'
+import uylogo from "../../uylogo.png"
 
 function Navbar() {
+  const MainDiv = styled.div`
+    display : flex;
+    flex-direction : row;
+    justify-content : space-around;
+    padding : 1%;
+    border-bottom : 1px solid skyblue;
+  `
+  const HomeLink = styled.span`
+    display : inline-block;
+    font-size : 1.5em;
+    color : skyblue;
+    font-family : 'Roboto Condensed', sans-serif; 
+  `
+  const AboutLink = styled.span`
+    display : inline-block;
+    font-size : 1.2em;
+    color : skyblue;
+    font-family : 'Roboto Condensed', sans-serif; 
+  `
+  
+
+
   return (
-    <div style={{listStyleType : 'none'}}>
-        <ul style={{listStyleType : 'none', display : 'flex', justifyContent : 'center', textDecoration : 'none'}} >
-            <li style={{margin : '1%', textDecoration : 'none'}}>
-                <NavLink style={{ textDecoration: 'none', color  :'lightskyblue'}} to='/'>Home</NavLink>
-            </li>
-            <li style={{margin : '1%', textDecoration : 'none'}}>
-                <NavLink style={{ textDecoration: 'none', color  :'lightskyblue'}} to='/about'>Abuot</NavLink>
-            </li>
-        </ul>
-        <hr/>
-    </div>
+    <MainDiv >
+      <div>
+        <NavLink to='/'><img style={{width : "20%"}} src={uylogo} alt="uylogo" /></NavLink>
+      </div>
+      <div>
+        <NavLink  to='/about'><AboutLink>Abuot</AboutLink></NavLink>
+      </div>
+    </MainDiv>
   )
 }
 
