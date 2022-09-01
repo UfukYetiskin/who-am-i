@@ -3,7 +3,40 @@ import {AiFillGithub} from '@react-icons/all-files/ai/AiFillGithub'
 import {GrLinkedin} from '@react-icons/all-files/gr/GrLinkedin'
 import {AiFillTwitterCircle} from '@react-icons/all-files/ai/AiFillTwitterCircle'
 import {AiFillInstagram} from '@react-icons/all-files/ai/AiFillInstagram'
+import styled from "styled-components";
+
+import {useState, useEffect} from "react"
+
+
 function About() {
+
+  const ExperienceList = styled.ul`
+    display : flex;
+    flex - direction : column;
+    justify-content : center;
+    flex-wrap : wrap;
+  `
+  const ExpLi = styled.li`
+    list-style-type : none;
+    padding : 1%;
+    width  : 40%;
+    border : 1px solid grey;
+    margin : 5% 1%;
+    box-shadow : 10px 10px 5px grey;
+    background-color : #F0FFFF;
+  `
+  
+  const [repos, setRepos] = useState([])
+
+  useEffect(() => {
+
+    fetch("https://api.github.com/users/UfukYetiskin/repos")
+      .then((res) => res.json())
+      .then((data) => setRepos(data))
+      .catch(err => console.log(err))
+
+  },[])
+  
   return (
     <div>
       <div>
@@ -13,39 +46,20 @@ function About() {
           alt="imageof-Ufuk"
         />
       </div>
-      <div style={{display : 'flex', flexDirection : 'row', width : '70%', margin : 'auto', fontSize : '12px', }}>
-        <div style={{width : '50%' , textAlign : 'center', borderRight : '1px solid silver', paddingRight :'1%'}}>
-          <p>
-            Ben deniz Ufuk Yetişkin, ha oyunlardaki takma adımı sorarsanız o
-            'reikotaka'. 1995 yılında Diyarbakır'da dünyaya geldim. Geçim derdi
-            ile babamın iş bulma arayışından sonra Kocaeli'ye bebek sayılacak
-            yaşta temelli taşındık.
-          </p>
-          <p>
-            Lise eğitimimi İzmit Endüstri Meslek Lisesi'nde Elektrik ve
-            Elektronik Bölümü'nde tamamladım. Ardından üniversiteye gitmek için
-            uzunca hazırlanma sürecim oldu. Pamukkale Üniversitesi, Yönetim
-            Bilişim Sistemleri Bölümü'nü kazanmam ile yazılım ile tanıştım.
-          </p>
-          <p>
-            Lisans eğitimim boyunca yazılım alanında, finans, yönetim ve
-            pazarlama alanlarında çeşitli dersler aldım. Bu alanlar arasında
-            yazılım öğrenmek ve bir şeyler denemek ilgimi çekti ve kariyerimi bu
-            yönde ilerletme kararı aldım.
-          </p>
-        </div>
-        <div style={{width : '50%' , textAlign : 'center'}}>
-          <p>
-            Lisans eğitimim sırasında Erasmus+ Programı ile Varşova'da 6 ay
-            bulundum ve küçük bir Avrupa gezisi yapma fırsatı buldum.
-          </p>
-          <p>
-            Bu arada beni hırslandıran ve her zaman arkamda olan sevgili kız
-            arkadaşım Ümmühan Gümüş'e ve bana her zaman saygı duyan aileme çok
-            teşekkür ederim. Sizleri çok seviyorum.
-          </p>
-        </div>
-      </div>
+      
+      <ExperienceList>
+        {repos && repos.map((rep) => (
+          <ExpLi>
+            <h4>Repository Name: {rep?.name}</h4>
+            <h5>Repository Description: {rep?.description}</h5>
+            <span>Created Date: {rep?.created_at}</span><br/><span>Last Updated Date: {rep?.updated_at}</span>
+            <br/>
+            <a href={rep?.html_url} alt="projectLink">Go Repository</a>
+            <br/>
+            
+          </ExpLi>
+        ))}
+      </ExperienceList>
       <hr style={{margin:  '5%'}} />
       <div>
         <h3>Sosyal Medya Hesaplarım</h3>

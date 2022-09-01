@@ -54,6 +54,7 @@ function Home() {
     display : flex;
     flex - direction : column;
     justify-content : center;
+    flex-wrap : wrap;
   `
   const ExpLi = styled.li`
     list-style-type : none;
