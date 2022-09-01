@@ -25,6 +25,10 @@ function About() {
     box-shadow : 10px 10px 5px grey;
     background-color : #F0FFFF;
   `
+  const Title = styled.h1`
+    font-size : 3em;
+    margin : 5%
+  `
   
   const [repos, setRepos] = useState([])
 
@@ -39,14 +43,7 @@ function About() {
   
   return (
     <div>
-      <div>
-        <img
-          style={{ width: "70%" }}
-          src="https://www.linkpicture.com/q/WhatsApp-Image-2022-01-09-at-22.54.08.jpeg"
-          alt="imageof-Ufuk"
-        />
-      </div>
-      
+      <Title><i>My Repositories</i></Title>
       <ExperienceList>
         {repos && repos.map((rep) => (
           <ExpLi>
