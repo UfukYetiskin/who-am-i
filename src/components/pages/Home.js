@@ -2,6 +2,10 @@ import React from 'react'
 import {useEffect , useState} from 'react'
 import styled from "styled-components"
 import profilePhoto from "../../profilePhoto.jpeg"
+import {AiFillGithub} from '@react-icons/all-files/ai/AiFillGithub'
+import {GrLinkedin} from '@react-icons/all-files/gr/GrLinkedin'
+import {AiFillTwitterCircle} from '@react-icons/all-files/ai/AiFillTwitterCircle'
+import {AiFillInstagram} from '@react-icons/all-files/ai/AiFillInstagram'
 
 function Home() {
   
@@ -18,13 +22,12 @@ function Home() {
     width : "100%",
     borderRadius  :"60%",
     marginTop  : "5%",
+    boxShadow : "10px 10px 5px grey",
   }
   const ImageBG = styled.div`
       padding : 1%;
-      background-color : lightblue;
       width : 20%;
       border-radius : 50%;
-      border : 5px solid cornflowerblue;
       margin : 5% auto
     `
   const webImgStyle = {
@@ -53,7 +56,12 @@ function Home() {
     justify-content : center;
   `
   const ExpLi = styled.li`
-    
+    list-style-type : none;
+    padding : 1%;
+    width  : 40%;
+    border : 1px solid grey;
+    margin : 5% 1%;
+    box-shadow : 10px 10px 5px grey;
   `
   return (
     <div>
@@ -73,9 +81,76 @@ function Home() {
         <InfoHead><i>Hello everyone, I'm Ufuk Yetişkin</i></InfoHead>
         <InfoParag><i>I completed my undergraduate education at Pamukkale University. I met software at university. First I started with the backend and then I had a chance to try android. But I did not feel that I was having fun and enjoying in these areas and I decided to try frontend. I first started by learning HTML and CSS, and when I started to feel that it gave me pleasure, I decided to continue my career with frontend. Then I continued to develop individually. Meanwhile, I first started learning JavaScript, and then I started learning React, the library for JavaScript. I still continue to develop as an individual.</i></InfoParag>
       </AbuotMe>
+      <Subtitle><i>My Expriences</i></Subtitle>
       <ExperienceList>
-
+          <ExpLi>
+              <h3>Bimser Çözüm</h3>
+              <div style={{display : "flex", flexDirection : "row", justifyContent : "space-around"}}>
+                <h4>Front-End Developer Intern</h4>
+                <h5>March 2022 - April 2022, Kocaeli/Türkiye</h5>
+              </div>
+              <ul>
+                  <li>
+                      <p>The document of the software languages used in the projects developed with the Markdown markup language was created</p>
+                  </li>
+                  <li>
+                      <p>Experienced teamwork and how to contribute to the project on the Github platform with Git Version Control System.</p>
+                  </li>
+                  <li>
+                      <p>Projects were made with React, the library of JavaScript. Responsive design was made by formatting the project Tailwind</p>
+                  </li>
+              </ul>
+          </ExpLi>
+          <ExpLi>
+              <h3>Fabryka Emocji Reklama</h3>
+              <div style={{display : "flex", flexDirection : "row", justifyContent : "space-around"}}>
+                <h4>Graphic Design Intern</h4>
+                <h5>August 2021 - January 2022, Warszawa/Poland</h5>
+              </div>
+              <ul>
+                  <li>
+                      <p>Vector designs were created with CorelDRAW.</p>
+                  </li>
+                  <li>
+                      <p>Edited images and pictures with PhotoShop.</p>
+                  </li>
+                  <li>
+                      <p>Products are listed and offered for sale on Allegro, an e-commerce site.</p>
+                  </li>
+                  <li>
+                      <p> He became the leader of the interns team and became the project manager.</p>
+                  </li>
+              </ul>
+          </ExpLi>
+          <ExpLi>
+              <h3>Brisa</h3>
+              <div style={{display : "flex", flexDirection : "row", justifyContent : "space-around"}}>
+                <h4>Human Resources Intern</h4>
+                <h5>June 2019 - August 2019, Kocaeli/Türkiye</h5>
+              </div>
+              <ul>
+                  <li>
+                      <p> He became the leader of the interns team and became the project manager.</p>
+                  </li>
+                  <li>
+                      <p> Learned about document creation and storage.</p>
+                  </li>
+                  <li>
+                      <p> Gained information about scheduling worker trainings.</p>
+                  </li>
+              </ul>
+          </ExpLi>
       </ExperienceList>
+
+      <div>
+        <Subtitle><i>Sosyal Medya Hesaplarım</i></Subtitle>
+        <ul style={{display : 'flex', listStyleType  :'none', justifyContent :'center'}}>
+          <li style={{margin : '1%',textDecoration :'none', fontSize : "3em", color : "black"}}><a style={{textDecoration :'none'}} href="https://github.com/UfukYetiskin"><AiFillGithub/></a></li>
+          <li style={{margin : '1%', fontSize : "3em", color : "black"}}><a style={{textDecoration :'none'}} href="https://www.linkedin.com/in/ufuk-yetiskin-1b016b18b/"><GrLinkedin/></a></li>
+          <li style={{margin : '1%', fontSize : "3em", color : "black"}}><a style={{textDecoration :'none'}} href="https://twitter.com/YetiskinU"><AiFillTwitterCircle/></a></li>
+          <li style={{margin : '1%', fontSize : "3em", color : "black"}}><a style={{textDecoration :'none'}} href="https://www.instagram.com/harut__marut/?hl=tr"><AiFillInstagram/></a></li>
+        </ul>
+      </div>
     </div>
   )
 }
