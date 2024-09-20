@@ -1,10 +1,17 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react'
 import { AiOutlineLink } from "react-icons/ai";
 
 function Experience() {
+    const ref = useRef(null);
+
+    useEffect(() => {
+        if(ref.current){
+            ref.current.scrollIntoView({behavior : "smooth"});
+        }
+    }, [])
     return (
         <>
-            <div className='space-y-12 owerflow-y-auto'>
+            <div className='space-y-12 owerflow-y-auto' ref={ref}>
                 <div className='grid grid-cols-7'>
                     <h1 className=' flex items-start justify-start col-span-2 text-balance'>Nov 2022 - Aug 2024</h1>
                     <div className='flex flex-col justify-start items-start col-span-5'>
@@ -22,7 +29,7 @@ function Experience() {
                             <li className='text-start decoration-dotted text-wrap mb-2'><span className='mr-2 text-white'>-</span>In Tpayment project, Developed a project using Node.js and the EJS (Embedded JavaScript)
                                 templating engine for dynamic content rendering.</li>
                         </ul>
-                        <div className='grid grid-cols-4 gap-4'>
+                        <div className='grid grid-cols-2 lg:grid-cols-4 gap-4'>
                             <span className='bg-[#347e7c] text-[#5be3d0] px-4 py-2 opacity-75 rounded-2xl'>JavaScript</span>
                             <span className='bg-[#347e7c] text-[#5be3d0] px-4 py-2 opacity-75 rounded-2xl'>Node.js</span>
                             <span className='bg-[#347e7c] text-[#5be3d0] px-4 py-2 opacity-75 rounded-2xl'>React</span>
@@ -30,7 +37,7 @@ function Experience() {
                         </div>
                 </div>
                 <div className='grid grid-cols-7'>
-                    <h1 className='text-balance flex items-start justify-start col-span-2'>Dec 2023 - Mar 2024</h1>
+                    <h1 className='text-balance flex items-start justify-start col-span-2'>Dec 2023  - Mar 2024</h1>
                     <div className='flex flex-col justify-start items-start col-span-5'>
                         <h1 className='font-medium mb-4 text-start text-[#fff] leading-5'>Frontend Developer, Freelance</h1>
                         <div className='flex justify-start items-center'>
@@ -44,7 +51,7 @@ function Experience() {
                             <li className='text-start decoration-dotted text-wrap mb-2'><span className='mr-2 text-white'>-</span>Analyzed bug reports and provided effective solutions to ensure application stability.                            </li>
                             <li className='text-start decoration-dotted text-wrap mb-2'><span className='mr-2 text-white'>-</span>Supported the integration of new features according to project requirements</li>
                         </ul>
-                        <div className='grid grid-cols-4 gap-4'>
+                        <div className='grid grid-cols-2 lg:grid-cols-4 gap-4'>
                             <span className='bg-[#347e7c] text-[#5be3d0] px-4 py-2 opacity-75 rounded-2xl'>JavaScript</span>
                             <span className='bg-[#347e7c] text-[#5be3d0] px-4 py-2 opacity-75 rounded-2xl'>React</span>
                             <span className='bg-[#347e7c] text-[#5be3d0] px-4 py-2 opacity-75 rounded-2xl'>Next.js</span>                        </div>
@@ -58,7 +65,7 @@ function Experience() {
                             <li className='text-start decoration-dotted text-wrap mb-2'><span className='mr-2 text-white'>-</span>Developed an application using React, focusing on designing user interface components and managing state.</li>
                             <li className='text-start decoration-dotted text-wrap mb-2'><span className='mr-2 text-white'>-</span>Utilized Markdown for project documentation, creating technical documentation to maintain project continuity</li>
                         </ul>
-                        <div className='grid grid-cols-4 gap-4'>
+                        <div className='grid grid-cols-2 lg:grid-cols-4 gap-4'>
                             <span className='bg-[#347e7c] text-[#5be3d0] px-4 py-2 opacity-75 rounded-2xl'>JavaScript</span>
                             <span className='bg-[#347e7c] text-[#5be3d0] px-4 py-2 opacity-75 rounded-2xl'>React</span>
                             <span className='bg-[#347e7c] text-[#5be3d0] px-4 py-2 opacity-75 rounded-2xl'>Markdown</span>

@@ -1,12 +1,16 @@
-import React from 'react'
-
-// import SideBar from '../side-bar';
-
+import React, {useRef, useEffect} from 'react'
 
 function Home() {
+  const ref = useRef(null);
+
+  useEffect(() => {
+      if(ref.current){
+        ref.current.scrollIntoView({behavior : "smooth"});
+      }
+  }, [])
   return (
     <>
-      <div className='space-y-12'>
+      <div className='space-y-12' ref={ref}>
         <div className='flex justify-center items-center'>
           <img
             src='/profilePhoto.jpeg'
